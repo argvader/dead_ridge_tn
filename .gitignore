@@ -1,0 +1,12 @@
+# Local environment / secrets
+.env
+.env.local
+**/*.mp4
+**/*.m4a
+
+# Python bytecode (from the mkdocs hook)
+__pycache__/
+*.pyc
+
+# MkDocs build output
+/site/

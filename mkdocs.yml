@@ -1,0 +1,65 @@
+site_name: "Dead Ridge, TN"
+site_url: "https://argvader.github.io/dead_ridge_tn/"
+
+# Player-provided character notes live beside portraits under docs/assets/<cat>/<slug>.md.
+# They are source material distilled into wiki pages, not pages themselves — keep them
+# out of the build so mkdocs doesn't render them as orphan pages (fails --strict).
+exclude_docs: |
+  assets/**/*.md
+
+theme:
+  name: material
+  custom_dir: overrides
+  logo: assets/logo.svg
+  favicon: assets/logo.svg
+  palette:
+    # Parchment — the default, and the one the theme is designed around.
+    # Material takes the FIRST entry as the initial scheme. Real colors come
+    # from docs/stylesheets/extra.css; the keywords below only tint the chrome
+    # Material paints before that stylesheet applies.
+    - scheme: default
+      primary: red
+      accent: deep orange
+      toggle:
+        icon: material/weather-night
+        name: Switch to night
+    # Night.
+    - scheme: slate
+      primary: black
+      accent: red
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to parchment
+  font:
+    text: Crimson Text
+    code: Cutive Mono
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - toc.follow
+    - search.highlight
+
+extra_css:
+  - stylesheets/extra.css
+
+hooks:
+  - hooks/wiki_images.py
+
+markdown_extensions:
+  - attr_list
+  - md_in_html
+  - admonition
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.superfences
+
+# The summarizer grows this nav as sessions and wiki pages are created. It adds
+# a "Sessions:" section and a "Wiki:" section (with pcs/npcs/factions/locations
+# children) on first use — see SESSION_SUMMARIZER.md.
+nav:
+  - Home: index.md
+  - Prologue: prologue.md

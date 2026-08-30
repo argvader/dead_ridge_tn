@@ -1,0 +1,6 @@
+# Local tooling only — NOT installed by the GitHub Pages deploy workflow,
+# which installs requirements.txt on every push.
+#
+# Needed by bin/deepgram_async.py (async Deepgram transcription via S3).
+boto3
+requests

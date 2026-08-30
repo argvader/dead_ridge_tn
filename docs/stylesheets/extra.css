@@ -1,0 +1,408 @@
+/* ============================================================================
+   Dead Ridge, TN — campaign theme
+
+   Read off the TWD Universe RPG book spread (twd_style.png): an aged-paper
+   ground with mottled corner staining, oxblood display caps, bold red sans
+   subheads over a serif column, and flat red hairline rules. Parchment is the
+   default scheme; "night" (ash charcoal, lit blood red, olive drab off the
+   interior art) is the toggle.
+
+   Three source tokens per scheme — paper/ground, ink, and the red — with every
+   other shade derived via color-mix, so retuning one moves the whole palette.
+   Fonts are loaded in overrides/main.html (Special Elite, Oswald); Crimson Text
+   and Cutive Mono come from theme.font in mkdocs.yml.
+   ========================================================================== */
+
+:root {
+  --display-font: "Special Elite", "Courier New", monospace;
+  --subhead-font: "Oswald", "Arial Narrow", sans-serif;
+}
+
+/* ------------------------------------------------------- Parchment (default) */
+[data-md-color-scheme="default"] {
+  --paper: #d8ceba;
+  --ink: #1c1714;
+  --red: #8b1d18;
+
+  --paper-light: color-mix(in srgb, var(--paper) 72%, white);
+  --paper-dark: color-mix(in srgb, var(--paper) 88%, black);
+  --red-deep: color-mix(in srgb, var(--red) 78%, black);
+  --red-bright: #a8432c;
+  --rule: var(--red);
+
+  /* Grain, baked at parchment strength and multiplied into the paper. */
+  --paper-grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23g)' opacity='0.34'/%3E%3C/svg%3E");
+
+  --md-primary-fg-color: var(--red-deep);
+  --md-primary-fg-color--light: var(--red);
+  --md-primary-fg-color--dark: color-mix(in srgb, var(--red) 58%, black);
+  --md-primary-bg-color: color-mix(in srgb, var(--paper) 78%, white);
+  --md-accent-fg-color: var(--red-bright);
+
+  --md-default-bg-color: var(--paper);
+  --md-default-bg-color--light: var(--paper-light);
+  --md-default-fg-color: var(--ink);
+  /* 5.4:1 on the typical texture value, 3.9:1 in its darkest tenth. */
+  --md-default-fg-color--light: color-mix(in srgb, var(--ink) 82%, var(--paper));
+  --md-default-fg-color--lighter: color-mix(in srgb, var(--ink) 62%, var(--paper));
+
+  --md-typeset-color: var(--ink);
+  --md-typeset-a-color: var(--red-bright);
+
+  --md-code-bg-color: color-mix(in srgb, var(--ink) 12%, transparent);
+  --md-code-fg-color: color-mix(in srgb, var(--ink) 88%, var(--red));
+}
+
+/* ---------------------------------------------------------- Night (toggle) */
+/* Oxblood goes muddy on charcoal, so the red is lifted and olive drab from the
+   interior art (twd_image1) takes over as the secondary. */
+[data-md-color-scheme="slate"] {
+  --paper: #16181a;
+  --ink: #ded6c6;
+  /* Lit enough to hold 3.3:1 against the inverted texture; the book's oxblood
+     and even a #b03a30 sit under 2.5:1 on it and stop reading as headings. */
+  --red: #c9503f;
+
+  --paper-light: color-mix(in srgb, var(--paper) 82%, white 10%);
+  --paper-dark: color-mix(in srgb, var(--paper) 80%, black);
+  --red-deep: color-mix(in srgb, var(--red) 72%, black);
+  --red-bright: color-mix(in srgb, var(--red) 76%, white);
+  --olive: #8d9b7e;
+  --rule: var(--red);
+
+  /* Much weaker: grain that reads as paper tooth reads as noise on black. */
+  --paper-grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23g)' opacity='0.10'/%3E%3C/svg%3E");
+
+  --md-primary-fg-color: color-mix(in srgb, var(--paper) 88%, black);
+  --md-primary-fg-color--light: var(--paper-light);
+  --md-primary-fg-color--dark: color-mix(in srgb, var(--paper) 70%, black);
+  --md-primary-bg-color: var(--ink);
+  --md-accent-fg-color: var(--red-bright);
+
+  --md-default-bg-color: var(--paper);
+  --md-default-bg-color--light: var(--paper-light);
+  --md-default-fg-color: var(--ink);
+  /* 6.8:1 on the inverted texture. */
+  --md-default-fg-color--light: color-mix(in srgb, var(--ink) 80%, var(--paper));
+  --md-default-fg-color--lighter: color-mix(in srgb, var(--ink) 62%, var(--paper));
+
+  --md-typeset-color: var(--ink);
+  --md-typeset-a-color: var(--red-bright);
+
+  --md-code-bg-color: color-mix(in srgb, var(--ink) 16%, transparent);
+  --md-code-fg-color: var(--olive);
+}
+
+/* ----------------------------------------------------------- Paper texture */
+/* The ground colour, and the fallback if the texture below fails to load. */
+body {
+  background-color: var(--paper);
+}
+
+/* The scanned plaster/paper texture, behind the main column only — the header
+   and footer are opaque plates that paint over it.
+
+   It lives on a fixed, viewport-sized pseudo-element at z-index -1 rather than
+   on .md-main's own background. Three reasons: `cover` on a fixed box already
+   holds the texture still while the column scrolls, without the
+   `background-attachment: fixed` that iOS renders badly; `filter` can invert
+   the whole layer for the night scheme without touching the text, which it
+   would if the filter sat on .md-main itself; and if the image 404s the
+   pseudo is transparent, so body's paper colour shows through in both schemes
+   instead of a blank plate.
+
+   The grain is stacked on top of the texture and multiplied in, so the paper
+   keeps its tooth at any zoom — the source image is only 1232px wide. */
+.md-main::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image:
+    var(--paper-grain),
+    url("../assets/theme/background.jpg");
+  background-size: auto, cover;
+  background-position: center, center;
+  background-repeat: repeat, no-repeat;
+  background-blend-mode: multiply, normal;
+}
+
+/* Night: invert the texture. A bare `invert(1)` of the warm tan lands on a
+   mid-value cobalt — measured, that drops the red headings to 1.3:1 and the
+   page stops being readable. Darkening and desaturating the negative keeps the
+   inversion but pulls it toward the cold interiors of twd_image1, where the
+   headings clear 3.3:1. Swap this one value to taste:
+
+     invert(1)                                     the raw negative, bright cobalt
+     invert(1) hue-rotate(180deg) brightness(0.45)  a warm sepia negative
+
+   If you go brighter than this, lift --red in the slate block to match. */
+[data-md-color-scheme="slate"] {
+  --texture-filter: invert(1) saturate(0.5) brightness(0.28);
+}
+
+[data-md-color-scheme="slate"] .md-main::before {
+  filter: var(--texture-filter);
+}
+
+/* ------------------------------------------------------------- Typography */
+/* Display caps for the wordmark and page titles — battered typewriter, with a
+   soft shadow standing in for ink bleed into the paper. */
+.md-typeset h1,
+.md-header__title,
+.md-header__topic > .md-ellipsis {
+  font-family: var(--display-font);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.md-typeset h1 {
+  color: var(--red);
+  font-weight: 400;
+  font-size: 1.9em;
+  line-height: 1.15;
+  text-shadow: 0 1px 0 color-mix(in srgb, var(--ink) 22%, transparent);
+}
+
+/* Condensed bold caps for section heads, the way the book sets THE LIVING. */
+.md-typeset h2,
+.md-typeset h3,
+.md-typeset h4,
+.md-nav__title {
+  font-family: var(--subhead-font);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+}
+
+.md-typeset h2 {
+  color: var(--red);
+  font-size: 1.25em;
+  padding-bottom: 0.25rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.md-typeset h3 {
+  color: var(--red-deep);
+  font-size: 1.05em;
+}
+
+[data-md-color-scheme="slate"] .md-typeset h3 {
+  color: var(--red-bright);
+}
+
+/* The printed column. Material's stock .md-typeset is 0.8rem, and since the
+   theme sets html to 125% that resolves to 16px — Crimson Text is a delicate,
+   high-contrast serif whose strokes go thin and washy at that size, especially
+   over a textured ground. 1.1rem is 22px, which thickens the strokes and puts
+   the measure at roughly 60 characters. Every nested size in the content is an
+   em of this, so headings, admonitions, code and tables all scale with it. */
+.md-typeset {
+  font-size: 1.1rem;
+  line-height: 1.68;
+}
+
+/* Material sets the blockquote rule from a dir-scoped selector at (0,3,0), so
+   match on both sides rather than the bare element. Read-aloud text is the
+   centerpiece of the Prologue, so it keeps more contrast than Material's
+   default muted grey. */
+[dir="ltr"] .md-typeset blockquote {
+  border-left: 2px solid var(--rule);
+}
+
+[dir="rtl"] .md-typeset blockquote {
+  border-right: 2px solid var(--rule);
+}
+
+.md-typeset blockquote {
+  color: color-mix(in srgb, var(--ink) 86%, var(--paper));
+  font-style: italic;
+}
+
+/* Flat red hairline — the rule that opens and closes a page in the book. */
+.md-typeset hr {
+  border: none;
+  height: 0;
+  border-top: 2px solid var(--rule);
+  opacity: 0.85;
+}
+
+/* --------------------------------------------------------- Sidebar boxes */
+/* The dotted red aside ("CAN I PLAY AS RICK?"). The book has exactly one aside
+   style, but Material paints twelve — .note blue, .warning orange, and so on —
+   from selectors like `.md-typeset .admonition.note` at specificity (0,3,0).
+   The `[class]` attribute bump below matches that specificity and wins on
+   source order, so every type collapses to the one red box without naming any
+   of them. Material's leading icon and its tinted title bar are stripped, so
+   the box is border and type only. */
+.md-typeset .admonition[class],
+.md-typeset details[class] {
+  border: 2px dotted var(--rule);
+  border-radius: 0;
+  box-shadow: none;
+  background: color-mix(in srgb, var(--paper-light) 70%, transparent);
+  font-size: 0.85em;
+}
+
+.md-typeset .admonition[class]:focus-within,
+.md-typeset details[class]:focus-within {
+  box-shadow: 0 0 0 0.2rem color-mix(in srgb, var(--rule) 22%, transparent);
+}
+
+.md-typeset [class] > .admonition-title,
+.md-typeset [class] > summary {
+  background: transparent;
+  border: none;
+  margin: 0;
+  padding: 0.6rem 0.8rem 0.2rem;
+  font-family: var(--subhead-font);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 600;
+  color: var(--red);
+}
+
+/* Drop the type icon; keep the <details> disclosure chevron, recolored. */
+.md-typeset [class] > .admonition-title::before,
+.md-typeset [class] > summary::before {
+  display: none;
+}
+
+.md-typeset [class] > summary::after {
+  color: var(--rule);
+}
+
+/* ------------------------------------------------- Framed wiki + scene art */
+/* PC/NPC portraits & location art injected by hooks/wiki_images.py. A thin
+   oxblood rule over a paper mat, the way plates are set in the book. */
+.md-typeset img.wiki-image {
+  display: block;
+  width: 100%;
+  max-width: 240px;
+  margin: 0.4rem 1.4rem 1.4rem;
+  padding: 4px;
+  background: var(--paper-light);
+  border: 1px solid var(--red-deep);
+  border-radius: 0;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+}
+
+/* PC & NPC portraits: float to the right so the intro line and the Overview
+   section sit to their left. Every section AFTER Overview (the second H2 onward)
+   clears below the pairing, so the rest of the page runs full width beneath it.
+   Scoped to .wiki-portrait, so location banners are unaffected. */
+.md-typeset img.wiki-portrait {
+  float: right;
+  margin: 0.3rem 0 1rem 0.5rem;
+}
+
+/* Markdown wraps the injected portrait <img> in a <p>, so anchor off that paragraph
+   with :has() to reach the sibling headings (a plain `img ~ h2` never matches — the
+   img is a child of the <p>, not a sibling of the h2).
+
+   The heading beside the floated portrait establishes a block formatting context so
+   its box — and the divider — shrinks to the space LEFT of the portrait instead of
+   running underneath it. This shrink is automatic and responsive (unlike
+   `width: calc(100% - 250px)`, which collapses on narrow screens). margin-right
+   holds the divider a deliberate gap short of the image, while body text still wraps
+   close via the portrait's own 0.5rem margin. */
+.md-typeset p:has(> img.wiki-portrait) ~ h2 {
+  display: flow-root;
+  margin-right: 1.5rem;
+}
+
+/* Sections below the portrait run full width again. */
+.md-typeset p:has(> img.wiki-portrait) ~ h2 ~ h2 {
+  clear: right;
+  margin-right: 0;
+}
+
+/* The dramatized "## The Scene" image at the bottom of a session page. */
+.md-typeset h2#the-scene + p img,
+.md-typeset img.scene-image {
+  display: block;
+  width: 100%;
+  margin: 0.6rem auto 1.4rem;
+  padding: 5px;
+  background: var(--paper-light);
+  border: 1px solid var(--red-deep);
+  border-radius: 0;
+  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.4);
+}
+
+/* --------------------------------------------------------------- Home hero image */
+.md-typeset img.home-hero {
+  display: block;
+  width: 100%;
+  margin: 0 0 1.6rem;
+  padding: 6px;
+  background: var(--paper-light);
+  border: 1px solid var(--red-deep);
+  border-radius: 0;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.45);
+}
+
+/* ------------------------------------------------------------------ Nav accents */
+/* Material's nav is 0.7rem (14px). Against a 22px column that reads as fine
+   print rather than as a level of the hierarchy, so it comes up to 16px — still
+   clearly subordinate to the body. Drop this rule to go back to stock. */
+.md-nav {
+  font-size: 0.8rem;
+  line-height: 1.4;
+}
+
+.md-nav__item .md-nav__link--active,
+.md-nav__link:hover {
+  color: var(--red-bright);
+}
+
+.md-nav__title {
+  color: var(--red);
+}
+
+/* Tables: solid oxblood header row, condensed caps. */
+.md-typeset table:not([class]) th {
+  background: var(--red-deep);
+  color: color-mix(in srgb, #d8ceba 88%, white);
+  font-family: var(--subhead-font);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-weight: 600;
+}
+
+.md-typeset table:not([class]) {
+  border: 1px solid color-mix(in srgb, var(--rule) 45%, transparent);
+  border-radius: 0;
+}
+
+/* ------------------------------------------------------------ Chrome seams */
+/* The footer defaults to a near-black slab in both schemes; make it the deep
+   red plate the header already is (ink in night), so the page doesn't end on a
+   color that isn't in the palette. */
+[data-md-color-scheme="default"] {
+  --md-footer-bg-color: var(--red-deep);
+  --md-footer-bg-color--dark: color-mix(in srgb, var(--red) 52%, black);
+  --md-footer-fg-color: color-mix(in srgb, var(--paper) 88%, white);
+  --md-footer-fg-color--light: color-mix(in srgb, var(--paper) 78%, transparent);
+  --md-footer-fg-color--lighter: color-mix(in srgb, var(--paper) 52%, transparent);
+}
+
+[data-md-color-scheme="slate"] {
+  --md-footer-bg-color: color-mix(in srgb, var(--paper) 82%, black);
+  --md-footer-bg-color--dark: color-mix(in srgb, var(--paper) 70%, black);
+  --md-footer-fg-color: var(--ink);
+  --md-footer-fg-color--light: color-mix(in srgb, var(--ink) 72%, transparent);
+  --md-footer-fg-color--lighter: color-mix(in srgb, var(--ink) 48%, transparent);
+}
+
+/* The sticky nav/TOC headings paint an opaque --md-default-bg-color block to
+   mask content scrolling under them. Against the grained paper that block reads
+   as a clean rectangular patch, so let the paper show through instead. */
+/* Material sets these at (0,2,0); match it. The mobile drawer title keeps its
+   own primary-colored bar via a (0,3,0) rule, which still wins. */
+.md-nav--primary .md-nav__title,
+.md-nav--secondary .md-nav__title {
+  background: transparent;
+  box-shadow: none;
+}
