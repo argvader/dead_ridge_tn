@@ -12,9 +12,10 @@ Georgia mountains, five years after the outbreak. It's a record of who the
 survivors are, what they've done, what it cost, and the stretch of ridge that
 keeps testing them.
 
-The campaign hasn't started yet. Read the **[Prologue](prologue.md)** first —
-that's what everyone at the table hears before anything else. The pages below
-fill in as sessions are played and summarized.
+Read the **[Prologue](prologue.md)** first — that's what everyone at the table
+hears before anything else. Session zero has been played: the survivors have a
+haven, the mountains have their rules, and the pages below fill in as the
+campaign goes on.
 
 <!--
   The home page becomes richer once you have a world bible and a few sessions:
@@ -25,15 +26,19 @@ fill in as sessions are played and summarized.
 
 ## The Setup
 
-!!! note "Before session zero"
-    Nothing about this stretch of the mountains is settled yet. The Unsetting
-    Questions at session zero decide what the survivors believe about Dead
-    Ridge — who held it, what happened here, and what everyone is still afraid
-    of. Until then, `world/world.md` is deliberately mostly empty.
+!!! note "What the mountains believe"
+    Session zero settled it. The herds in this region **climb** — people have
+    seen them in the trees. A walker was once seen to **pause** before attacking
+    a child. Everyone navigates by a haunted school bus called **the Old
+    Yeller**. And a man calling himself **the Watchman** is still broadcasting
+    conspiracies from somewhere out past the dial — new ones each time, which
+    means he's still alive.
 
 - **System** — The Walking Dead Universe Roleplaying Game (Free League)
 - **When** — 2030, five years after the outbreak
-- **Where** — the TN/GA mountains
+- **Where** — the ridges above Soddy-Daisy, north of Chattanooga
+- **Haven** — [the Hollow](wiki/locations/the-hollow.md), a hunting cabin at the
+  end of a washed-out logging road. Nine people, Capacity 1, Defense 2.
 - **GM** — Gary
 
 ## Getting Started
@@ -51,3 +56,4 @@ fill in as sessions are played and summarized.
 
 | # | Session | Date |
 | --- | --- | --- |
+| 0 | [Nine in the Hollow](sessions/2026-08-30.md) | 2026-08-30 |

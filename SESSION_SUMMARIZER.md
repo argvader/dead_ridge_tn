@@ -271,9 +271,16 @@ Find the newest date folder for the latest session.
 **Gary** is the **Game Master** — not a player, but their voice appears as
 a speaker in the transcript (they voice all NPCs and narration).
 
-_No player roster recorded yet — after session zero, replace this with a table of
-Player | Character | Archetype | Issue (the Walking Dead Universe RPG's terms), and
-add the matching speaker labels in `README.md`._
+| Player  | Character                      | Archetype           | Issue / Drive |
+|---------|--------------------------------|---------------------|---------------|
+| Ian     | Johnathan "JB" Banks           | Broker *(homebrew)* | Drive: get back to Wall Street — "I just gotta ring the bell" |
+| Graycen | Ashley "Ash" Fairfax           | Nobody              | Issue: doesn't care if she lives · Drive: "Keeps going anyway" |
+| Conner  | Dr. Charles "Chuck" Greenbriar | Scientist           | Drive: "I'm not crazy" |
+| Cobie   | Clara "CJ" James               | Homemaker           | Issue: Bloodthirsty · Drive: take down as many as possible |
+
+Matching speaker labels are in `README.md`. Note that in-person recordings on a
+single room mic cannot be reliably diarized per player — see the README's
+diarizer notes before trusting a `speaker-map.json`.
 
 ---
 

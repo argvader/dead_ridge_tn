@@ -126,6 +126,17 @@ selects which speaker-separation model runs. Two values are worth knowing:
 > **[`DEEPGRAM_AWS.md`](DEEPGRAM_AWS.md)**). Start with `v1`; only try `latest` if
 > v1 is visibly mis-splitting *your* recording.
 
+> **Exception — in-person recordings on one room mic.** The finding above holds
+> for the usual remote setup, where OBS captures a reasonably clean per-voice mix.
+> Session zero (2026-08-30) was recorded in person on a **phone** sitting on the
+> table, and there `v1` was clearly worse: five people collapsed into **three**
+> speaker buckets, with several speakers merged inside a single utterance.
+> `latest` produced four buckets and a more plausible distribution. Neither model
+> can properly separate a room mic — expect to attribute lines by **content**
+> (who names their own character, gear, or anchor) rather than trusting the
+> diarization, and don't fabricate a per-player `speaker-map.json` that the audio
+> can't support.
+
 For a `.wav`/`.m4a` recording:
 
 ```bash
@@ -174,9 +185,13 @@ the DM), e.g.
 
 Speaker labels for this campaign:
 
-| Deepgram speaker | Label to use |
-|------------------|--------------|
-| (the DM's voice) | `Gary the DM` |
+| Player  | Character                      | Archetype           | Label to use |
+|---------|--------------------------------|---------------------|--------------|
+| Gary    | — (Game Master)                | —                   | `Gary the DM` |
+| Ian     | Johnathan "JB" Banks           | Broker *(homebrew)* | `Ian as Banks` |
+| Graycen | Ashley "Ash" Fairfax           | Nobody              | `Graycen as Ash` |
+| Conner  | Dr. Charles "Chuck" Greenbriar | Scientist           | `Conner as Chuck` |
+| Cobie   | Clara "CJ" James               | Homemaker           | `Cobie as CJ` |
 
 Deepgram assigns speaker **numbers**, not names, and **the numbering changes with
 every conversion** — speaker 0 is not the same person from one session to the

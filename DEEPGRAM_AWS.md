@@ -39,16 +39,19 @@ already load from `.env` (`set -a; source .env; set +a`).
 ## 0. Prerequisites (one-time)
 
 - An AWS account.
-- A **private S3 bucket**. The generator picked `dead-ridge-tn-deepgram` for this campaign,
-  but you still have to create it — S3 bucket names are globally unique, so if
-  that one is taken, pick another and pass `--bucket` (or set `DEEPGRAM_BUCKET`
-  in `.env`). Create it in the
+- A **private S3 bucket**. This campaign reuses `ttrpg-deepgram`, the bucket the
+  other campaign repos already share — set `DEEPGRAM_BUCKET=ttrpg-deepgram` and
+  `DEEPGRAM_PREFIX=dead-ridge-tn` in `.env` (both are already there). The prefix
+  namespaces this repo's objects as `<prefix>/<DATE>/…`, so two campaigns
+  recorded on the same date can't overwrite each other's audio or transcript.
+  If you'd rather stand up a fresh bucket, S3 bucket names are globally unique —
+  pick one, pass `--bucket` (or set `DEEPGRAM_BUCKET`), and create it in the
   S3 console with these settings — the goal is the most locked-down posture that
   still lets the callback write:
 
   | Setting | Value |
   |---|---|
-  | **Bucket name** | `dead-ridge-tn-deepgram` (or your own; pass `--bucket`) |
+  | **Bucket name** | `ttrpg-deepgram` (or your own; pass `--bucket`) |
   | **Region** | e.g. `us-east-1` (remember it — it must match `--region`) |
   | **Object Ownership** | ACLs disabled (default) |
   | **Block *all* public access** | **ON — leave all four boxes checked** |
@@ -69,8 +72,8 @@ already load from `.env` (`set -a; source .env; set +a`).
       "Effect": "Allow",
       "Action": ["s3:PutObject", "s3:GetObject", "s3:ListBucket"],
       "Resource": [
-        "arn:aws:s3:::dead-ridge-tn-deepgram",
-        "arn:aws:s3:::dead-ridge-tn-deepgram/*"
+        "arn:aws:s3:::ttrpg-deepgram",
+        "arn:aws:s3:::ttrpg-deepgram/*"
       ]
     }]
   }
@@ -99,7 +102,7 @@ Throughout, these are the placeholders to replace:
 
 | Placeholder        | Example                            |
 |--------------------|------------------------------------|
-| `<BUCKET>`         | `dead-ridge-tn-deepgram`                   |
+| `<BUCKET>`         | `ttrpg-deepgram`                   |
 | `<REGION>`         | `us-east-1`                        |
 | `<PRESIGNED_GET>`  | output of `aws s3 presign` (below) |
 
@@ -117,9 +120,9 @@ python3 bin/deepgram_async.py sessions-raw/<DATE>/session.m4a
 
 It:
 
-1. Uploads the audio to `s3://<BUCKET>/<DATE>/audio/…` (private).
+1. Uploads the audio to `s3://<BUCKET>/<PREFIX>/<DATE>/audio/…` (private).
 2. Presigns a **GET** URL so Deepgram can fetch the audio.
-3. Presigns a **PUT** URL for `s3://<BUCKET>/<DATE>/session.deepgram.json`.
+3. Presigns a **PUT** URL for `s3://<BUCKET>/<PREFIX>/<DATE>/session.deepgram.json`.
 4. Submits to Deepgram with `callback=<presigned-put>&callback_method=put` and
    prints the `request_id`.
 5. Polls S3 and downloads the result to
@@ -131,7 +134,8 @@ Useful flags:
 |---|---|
 | `--diarize-model latest` | use the newer (slower) diarizer instead of `v1` |
 | `--no-wait` | submit and exit; fetch the result later yourself |
-| `--bucket` / `--region` | override the defaults (`dead-ridge-tn-deepgram` / `us-east-1`) |
+| `--bucket` / `--region` | override the defaults (`ttrpg-deepgram` / `us-east-1`) |
+| `--prefix` | key prefix inside the shared bucket (default `dead-ridge-tn`) |
 | `--date` | session folder name if it can't be inferred from the audio path |
 | `--callback-expiry` | seconds the result PUT URL stays valid (default 24h, max 604800) |
 

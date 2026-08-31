@@ -51,7 +51,7 @@ set -a; source .env; set +a
 python3 bin/deepgram_async.py sessions-raw/<DATE>/session.m4a
 ```
 
-This uploads the audio to the private `dead-ridge-tn-deepgram` S3 bucket, has Deepgram
+This uploads the audio to the private `ttrpg-deepgram` S3 bucket (shared across campaigns; this repo's objects live under the `dead-ridge-tn/` prefix), has Deepgram
 `PUT` the finished transcript straight back to S3, and downloads it to
 `sessions-raw/<DATE>/session.deepgram.json`. It waits and polls until the result
 lands (a multi-hour file can take many minutes). Add `--diarize-model latest` only
@@ -60,7 +60,7 @@ if `v1` is visibly mis-splitting speakers (see the README finding).
 Prerequisites for this step (see [`DEEPGRAM_AWS.md`](DEEPGRAM_AWS.md)):
 `pip install -r requirements-dev.txt`, and `.env` holding `DEEPGRAM_API_KEY` plus the
 `AWS_ACCESS_KEY_ID` / `AWS_SECRET_ACCESS_KEY` / `AWS_DEFAULT_REGION` for the
-`dead-ridge-tn-deepgram-bot` IAM user. If those aren't set up, stop and point the user at
+`ttrpg-deepgram-bot` IAM user. If those aren't set up, stop and point the user at
 `DEEPGRAM_AWS.md` rather than guessing.
 
 **Then STOP.** Once `session.deepgram.json` exists, hand off — do not continue to

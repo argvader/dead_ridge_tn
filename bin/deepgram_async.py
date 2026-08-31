@@ -20,8 +20,10 @@ with your own IAM credentials.
 Prerequisites
 -------------
   pip install -r requirements-dev.txt      # boto3 + requests
-  # A private S3 bucket named dead-ridge-tn-deepgram, and AWS credentials for a
-  # least-privileged IAM user scoped to it (see DEEPGRAM_AWS.md).
+  # A private S3 bucket (DEEPGRAM_BUCKET in .env; shared with the other campaign
+  # repos) and AWS credentials for a least-privileged IAM user scoped to it --
+  # see DEEPGRAM_AWS.md. Objects are namespaced under DEEPGRAM_PREFIX so
+  # campaigns sharing the bucket can't collide on the same session date.
   # boto3 reads them from the environment or ~/.aws/credentials:
   #   AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY, AWS_DEFAULT_REGION
   # DEEPGRAM_API_KEY comes from .env (this script also loads .env for you).
@@ -71,7 +73,10 @@ def parse_args():
     p = argparse.ArgumentParser(description=__doc__,
                                 formatter_class=argparse.RawDescriptionHelpFormatter)
     p.add_argument("audio", type=Path, help="path to the audio file to transcribe")
-    p.add_argument("--bucket", default=os.environ.get("DEEPGRAM_BUCKET", "dead-ridge-tn-deepgram"))
+    p.add_argument("--bucket", default=os.environ.get("DEEPGRAM_BUCKET", "ttrpg-deepgram"))
+    p.add_argument("--prefix", default=os.environ.get("DEEPGRAM_PREFIX", "dead-ridge-tn"),
+                   help="key prefix inside the bucket, so campaigns sharing it "
+                        "don't collide on a session date")
     p.add_argument("--region", default=os.environ.get("AWS_DEFAULT_REGION", "us-east-1"))
     p.add_argument("--model", default="nova-3")
     p.add_argument("--diarize-model", default="v1", choices=["v1", "latest"],
@@ -89,9 +94,10 @@ def parse_args():
     return p.parse_args()
 
 
-def s3_keys(date, audio_name):
-    """Return the (audio, result) object keys, namespaced per session date."""
-    return f"{date}/audio/{audio_name}", f"{date}/session.deepgram.json"
+def s3_keys(date, audio_name, prefix=""):
+    """Return the (audio, result) object keys, namespaced per campaign and date."""
+    base = f"{prefix.strip('/')}/{date}" if prefix.strip("/") else date
+    return f"{base}/audio/{audio_name}", f"{base}/session.deepgram.json"
 
 
 def upload_audio(s3, bucket, key, audio_path):
@@ -137,17 +143,38 @@ def _fmt(seconds):
     return f"{h}:{m:02d}:{s:02d}" if h else f"{m}:{s:02d}"
 
 
-def wait_for_result(s3, bucket, key, dest, poll_timeout, interval=15):
+def result_etag(s3, bucket, key):
+    """ETag of an existing result object, or None if there isn't one.
+
+    Captured BEFORE submitting so a re-run can tell the previous transcript apart
+    from the one this job is about to PUT. Without it, re-transcribing a session
+    (e.g. to try a different diarizer) finds the old object still sitting at the
+    key and "succeeds" instantly with stale data.
+    """
+    try:
+        return s3.head_object(Bucket=bucket, Key=key)["ETag"]
+    except ClientError as e:
+        if e.response["Error"]["Code"] not in ("404", "NoSuchKey", "403"):
+            raise
+        return None
+
+
+def wait_for_result(s3, bucket, key, dest, poll_timeout, interval=15, stale_etag=None):
+    if stale_etag:
+        print(f"⋯ a previous result is already at s3://{bucket}/{key} — "
+              f"waiting for Deepgram to replace it")
     print(f"⋯ waiting for Deepgram to PUT s3://{bucket}/{key} (polling every {interval}s)")
     start = time.time()
     deadline = start + poll_timeout
     tty = sys.stdout.isatty()
     while time.time() < deadline:
+        arrived = False
         try:
-            s3.head_object(Bucket=bucket, Key=key)
+            arrived = s3.head_object(Bucket=bucket, Key=key)["ETag"] != stale_etag
         except ClientError as e:
             if e.response["Error"]["Code"] not in ("404", "NoSuchKey", "403"):
                 raise
+        if not arrived:
             elapsed = _fmt(time.time() - start)
             # In-place timer on a TTY; plain lines when logged to a file.
             end = "" if tty else "\n"
@@ -178,7 +205,7 @@ def main():
         sys.exit("DEEPGRAM_API_KEY is not set (put it in .env or the environment)")
 
     date = args.date or args.audio.resolve().parent.name
-    audio_key, result_key = s3_keys(date, args.audio.name)
+    audio_key, result_key = s3_keys(date, args.audio.name, args.prefix)
     dest = REPO_ROOT / "sessions-raw" / date / "session.deepgram.json"
 
     s3 = boto3.client("s3", region_name=args.region)
@@ -188,13 +215,18 @@ def main():
     result_put_url = presign(s3, "put_object", args.bucket, result_key, args.callback_expiry,
                              content_type="application/json")
 
+    # Capture any existing result BEFORE submitting, so the poller waits for a
+    # genuinely new object instead of re-downloading the previous run's transcript.
+    stale_etag = result_etag(s3, args.bucket, result_key)
+
     result = submit(audio_get_url, result_put_url, args.model, args.diarize_model)
     request_id = result.get("request_id", "<none>")
     print(f"✓ submitted to Deepgram — request_id={request_id}")
     print(f"  result will land at s3://{args.bucket}/{result_key}")
 
     if args.wait:
-        wait_for_result(s3, args.bucket, result_key, dest, args.poll_timeout)
+        wait_for_result(s3, args.bucket, result_key, dest, args.poll_timeout,
+                        stale_etag=stale_etag)
     else:
         print(f"  fetch when ready: aws s3 cp s3://{args.bucket}/{result_key} {dest}")
 

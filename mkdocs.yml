@@ -63,3 +63,22 @@ markdown_extensions:
 nav:
   - Home: index.md
   - Prologue: prologue.md
+  - Sessions:
+      - "0. Nine in the Hollow": sessions/2026-08-30.md
+  - Wiki:
+      - Player Characters:
+          - wiki/pcs/johnathan-banks.md
+          - wiki/pcs/ashley-fairfax.md
+          - wiki/pcs/charles-greenbriar.md
+          - wiki/pcs/clara-james.md
+      - NPCs:
+          - wiki/npcs/birdie-coyle.md
+          - wiki/npcs/ruth-okafor.md
+          - wiki/npcs/tucker-vance.md
+          - wiki/npcs/marcus-webb.md
+          - wiki/npcs/dale-pruitt.md
+          - wiki/npcs/the-watchman.md
+      - Locations:
+          - wiki/locations/the-hollow.md
+          - wiki/locations/the-old-yeller.md
+          - wiki/locations/the-last-stop.md
