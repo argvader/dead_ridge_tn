@@ -43,6 +43,22 @@ which is the point.
 **The whole group**, by way of the Wallflower talent — no single NPC. A hedge
 against grief that is also a bet she can't win twice.
 
+## The Clipboard
+
+She spent the morning reading and staring out a window, which is the most Ashley
+Fairfax thing anyone did that day. Then she walked into a debris field and was the
+one who found the manifest.
+
+The body was mangled. The clipboard was held against its chest, close, the way
+you hold something you have decided matters more than your hands do. Most of the
+paper was burned. What survived was a departure time, a fuel state, a relay strip
+confirmed open, six passengers plus **CARGO IVY-4**, a heading of east-southeast,
+and a place called [Station Ivy](../locations/station-ivy.md) expecting an
+arrival by 1400 if the weather held.
+
+Everything the group now knows about the world past these ridges, she pulled off
+a dead man.
+
 ## Relationships
 
 - **Johnathan Banks** — she showed up at his cabin and he let her stay. That's
@@ -57,3 +73,6 @@ against grief that is also a bet she can't win twice.
 - **[Nine in the Hollow](../../sessions/2026-08-30.md)** — created; established
   as the group's outsider, joining by accident rather than by any tie. Took the
   Wallflower talent, making the survivors themselves her Anchor.
+- **[Smoke on the Ridge](../../sessions/2026-09-07.md)** — found the dead
+  passenger and the flight manifest that named Station Ivy, the IVY-4 cargo, and
+  the relay strip. Also found an empty cooler.

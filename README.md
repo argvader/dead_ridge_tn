@@ -25,6 +25,10 @@ OBS (record audio) → Deepgram (transcribe + diarize) → format transcript
    → sessions-raw/<DATE>/ → run SESSION_SUMMARIZER.md → commit → GitHub Pages
 ```
 
+Steps 1–3 are the transcript path. **If the recording failed, skip them** — drop
+your written notes into `sessions-raw/<DATE>/` (step 4) and the summarizer works
+from those instead.
+
 ### 1. Record the audio (OBS Studio)
 
 1. In OBS, open **Settings → Audio** and make sure your sources are captured:
@@ -229,12 +233,26 @@ fix it before summarizing.
 
 ```
 sessions-raw/2026-06-04/
-  transcript.md       # required — formatted above
+  transcript.md       # optional — the formatted transcript, when audio worked
+  Session Notes.md    # optional — the GM's written account of the session
   dm-notes.md         # optional — GM prep / notes
   <player>-notes.md   # optional — e.g. matt-notes.md
+  title.png           # optional — title card for the top of the session page
 ```
 
-The summarizer treats the **newest** date folder as the latest session.
+The summarizer treats the **newest** date folder as the latest session. Every
+`.md` in the folder except `transcript.md` is read as notes, so filenames don't
+have to match anything. **At least one text source is required** — a transcript,
+notes, or both.
+
+**No audio?** Notes alone are enough. The summarizer treats them as the
+authoritative record and produces the same page; it just won't quote the table
+verbatim. See "When there is no transcript" in `SESSION_SUMMARIZER.md`.
+
+**Title card.** Drop title art at `title.png` (or `.jpg`/`.jpeg`/`.webp`) and the
+summarizer copies it to `docs/assets/sessions/<DATE>-title.png`, where the
+`hooks/wiki_images.py` build hook renders it as a banner above the session page's
+heading. Nothing is generated when it's absent.
 
 ### 5. Generate the site content
 
@@ -245,7 +263,8 @@ newest `sessions-raw/<DATE>/`, the existing `docs/`, and `world/world.md`, then:
   (generating a location image for each new location into `docs/assets/locations/`),
 - writes the session summary to `docs/sessions/<DATE>.md`, ending with a
   **dramatized scene** (you pick 1 of 3) plus a generated image in
-  `docs/assets/sessions/<DATE>.png`,
+  `docs/assets/sessions/<DATE>.png` — the scene pick runs for every session,
+  transcript or notes-only,
 - updates the nav in `mkdocs.yml` and the table in `docs/index.md`.
 
 **PC and NPC portraits** are player-provided: drop an image at

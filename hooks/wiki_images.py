@@ -1,17 +1,29 @@
-"""MkDocs hook: render a top-of-page image on wiki PC, NPC, and location pages.
+"""MkDocs hook: render top-of-page art on wiki pages and session pages.
 
-For any page under `wiki/pcs/`, `wiki/npcs/`, or `wiki/locations/`, if an asset named
-after the page slug exists at `docs/assets/<category>/<slug>.{png,jpg,jpeg,webp}`,
-inject it as a framed image right after the page's H1. Missing asset → page unchanged.
+Two injections, both driven purely by a file existing at a conventional path:
+
+  - **Wiki pages.** For any page under `wiki/pcs/`, `wiki/npcs/`, or
+    `wiki/locations/`, if an asset named after the page slug exists at
+    `docs/assets/<category>/<slug>.{png,jpg,jpeg,webp}`, inject it as a framed
+    image right *after* the page's H1.
+  - **Session pages.** For any page at `sessions/<DATE>.md`, if a title card
+    exists at `docs/assets/sessions/<DATE>-title.{png,jpg,jpeg,webp}`, inject it
+    *above* the H1 as a banner. The `-title` suffix keeps it distinct from the
+    dramatized scene image at `docs/assets/sessions/<DATE>.png`, which the
+    session page embeds itself under `## The Scene`.
+
+Missing asset → page unchanged.
 
 This lets images "just appear":
   - PC and NPC portraits are player-provided art dropped into docs/assets/pcs|npcs/.
   - Location art is generated from the location summary into docs/assets/locations/.
+  - Session title cards are user-made, dropped into sessions-raw/<DATE>/title.png
+    and copied across by the summarizer (see SESSION_SUMMARIZER.md).
 
 Wired in via `hooks: [hooks/wiki_images.py]` in mkdocs.yml — a native MkDocs
-feature, so no extra pip dependency. The `.wiki-image` class is styled in
-docs/stylesheets/extra.css. Requires the `attr_list` markdown extension (enabled
-in mkdocs.yml) for the class to apply.
+feature, so no extra pip dependency. The `.wiki-image` and `.session-title`
+classes are styled in docs/stylesheets/extra.css. Requires the `attr_list`
+markdown extension (enabled in mkdocs.yml) for the classes to apply.
 """
 
 import os
@@ -32,27 +44,35 @@ def _find_asset(docs_dir, category, slug):
     return None
 
 
-def on_page_markdown(markdown, page, config, files):
-    src_uri = page.file.src_uri  # e.g. "wiki/pcs/adarius.md"
-    parts = src_uri.split("/")
-    if len(parts) != 3 or parts[0] != "wiki" or parts[1] not in CATEGORIES:
+def _alt_text(page, slug):
+    return (page.meta or {}).get("title") or slug.replace("-", " ").title()
+
+
+def _session_title_card(markdown, page, config, slug):
+    """Prepend the session's title card above its H1, if one exists."""
+    asset_rel = _find_asset(config["docs_dir"], "sessions", slug + "-title")
+    if asset_rel is None:
         return markdown
 
-    category = parts[1]
-    slug = os.path.splitext(parts[2])[0]
+    # sessions/<DATE>.md sits one level below the docs root.
+    src = "../" + asset_rel
+    image_md = f"![{_alt_text(page, slug)}]({src}){{ .session-title }}"
+    return image_md + "\n\n" + markdown
 
+
+def _wiki_image(markdown, page, config, category, slug):
+    """Insert the page's portrait or banner right after its H1, if one exists."""
     asset_rel = _find_asset(config["docs_dir"], category, slug)
     if asset_rel is None:
         return markdown
 
     # Path from this page (wiki/<category>/<slug>.md) up to docs root, then the asset.
     src = "../../" + asset_rel
-    alt = (page.meta or {}).get("title") or slug.replace("-", " ").title()
     # PC/NPC images are portraits (floated beside the Overview); locations are banners.
     classes = ".wiki-image"
     if category in ("pcs", "npcs"):
         classes += " .wiki-portrait"
-    image_md = f"![{alt}]({src}){{ {classes} }}"
+    image_md = f"![{_alt_text(page, slug)}]({src}){{ {classes} }}"
 
     # Insert right after the first H1; otherwise prepend.
     lines = markdown.split("\n")
@@ -62,3 +82,18 @@ def on_page_markdown(markdown, page, config, files):
             return "\n".join(lines)
 
     return image_md + "\n\n" + markdown
+
+
+def on_page_markdown(markdown, page, config, files):
+    src_uri = page.file.src_uri  # e.g. "wiki/pcs/adarius.md" or "sessions/2026-09-07.md"
+    parts = src_uri.split("/")
+
+    if len(parts) == 2 and parts[0] == "sessions":
+        slug = os.path.splitext(parts[1])[0]
+        return _session_title_card(markdown, page, config, slug)
+
+    if len(parts) == 3 and parts[0] == "wiki" and parts[1] in CATEGORIES:
+        slug = os.path.splitext(parts[2])[0]
+        return _wiki_image(markdown, page, config, parts[1], slug)
+
+    return markdown

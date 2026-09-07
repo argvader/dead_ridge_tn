@@ -39,3 +39,9 @@ with no PC tie.
 
 - **[Nine in the Hollow](../../sessions/2026-08-30.md)** — introduced as one of
   the five already at the Hollow. Considered as an Anchor and left unclaimed.
+- **[Smoke on the Ridge](../../sessions/2026-09-07.md)** — stayed behind, and
+  sent the party out with the only request anyone made of them: bring back or at
+  least catalogue any mechanical salvage. An engine could become a water pump or
+  electricity; anything else becomes parts. The crash was the first time the
+  mechanic at the unreachable haven had something worth reaching for. He got a
+  solar battery out of it.

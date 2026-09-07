@@ -331,6 +331,22 @@ body {
   box-shadow: 0 6px 22px rgba(0, 0, 0, 0.4);
 }
 
+/* ------------------------------------------------ Session title card (banner) */
+/* User-made title art dropped at sessions-raw/<DATE>/title.png, copied to
+   docs/assets/sessions/<DATE>-title.png and injected ABOVE the H1 by
+   hooks/wiki_images.py. Same framed plate as the home hero, with room beneath so
+   the heading that follows it doesn't crowd the lettering. */
+.md-typeset img.session-title {
+  display: block;
+  width: 100%;
+  margin: 0 0 1.4rem;
+  padding: 6px;
+  background: var(--paper-light);
+  border: 1px solid var(--red-deep);
+  border-radius: 0;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.45);
+}
+
 /* --------------------------------------------------------------- Home hero image */
 .md-typeset img.home-hero {
   display: block;

@@ -8,7 +8,7 @@
 #
 # Removes:
 #   - docs/sessions/<DATE>.md
-#   - docs/assets/sessions/<DATE>*.png   (generated scene image[s])
+#   - docs/assets/sessions/<DATE>*.png   (generated scene image[s] + title card copy)
 #   - the session's nav line in mkdocs.yml
 #   - the session's row in the docs/index.md Sessions table
 #
@@ -51,6 +51,8 @@ echo "  removed $SESSION_MD"
 
 # 2. Generated scene image(s) for this session.
 shopt -s nullglob
+# Matches both <DATE>.png (generated scene art) and <DATE>-title.png (the copy of
+# the user's title card; the original stays in sessions-raw/<DATE>/).
 scene_images=(docs/assets/sessions/${DATE}*.png)
 shopt -u nullglob
 if (( ${#scene_images[@]} )); then

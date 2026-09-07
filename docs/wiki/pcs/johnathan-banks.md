@@ -59,6 +59,20 @@ into leaving with him: *"Just read these people their last rites and then come
 help us."* He recruited her to the Hollow. He is entirely clear-eyed that this
 was an awful thing to do and did it anyway.
 
+## Johnny Bank Notes
+
+A man walked out of the treeline at [the crash site](../locations/the-crash-site.md)
+with five armed people behind him, and the first thing he did was use a name
+nobody at the Hollow had ever heard: **Johnny Bank Notes**.
+[Wade Tolliver](../npcs/wade-tolliver.md) knew Banks from before. After the
+outbreak he offered Banks a place with the crew that now holds
+[the Last Stop](../locations/the-last-stop.md) — fifty people, in the plaza Banks
+would later stand in front of and campaign to be king of — and Banks turned it
+down.
+
+Neither man has explained the refusal, and Banks did not volunteer it to the rest
+of the group.
+
 ## Relationships
 
 - **Clara "CJ" James** — his neighbor from before, another wealthy household on
@@ -75,3 +89,9 @@ was an awful thing to do and did it anyway.
   anyone else is living in it. Took Sister Ruth as his Anchor. Confirmed the
   **retirement home** as one of his three letters of introduction; the other two
   are still open.
+- **[Smoke on the Ridge](../../sessions/2026-09-07.md)** — spent the morning
+  teaching [Marcus Webb](../npcs/marcus-webb.md) knife fighting, a subject he
+  knows almost nothing about. Refused to let Marcus come to the crash and was
+  overruled. Found the cockpit, took a dying pilot's last words, and then walked
+  the boy in and had him do the hatchet work on her. Recognized, and named, by
+  Wade Tolliver.

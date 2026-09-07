@@ -51,6 +51,21 @@ about her. They didn't know each other before; the bond was built at the Hollow.
 It is worth noting what she chose. The most lethal person at the haven anchored
 herself not to a fighter but to the woman who knows how to make things live.
 
+## The Thing in the Tree
+
+She was alone at the base of the wreck when she heard a walker hiss and could not
+find it, because it was not on the ground. It was overhead, working its way out
+along a limb, and then it was on top of her.
+
+She rolled with the drop, got her hatchet clear, blocked the bite with her
+forearm, and split its skull. Then she rolled on top of it and hit it again. Then
+she took its head off.
+
+The mountains' one established rule — **the herds here climb** — got its first
+demonstration on the most dangerous person at [the Hollow](../locations/the-hollow.md),
+and she handled it alone and without noise. It is the closest thing to a clean win
+the group has had.
+
 ## Relationships
 
 - **Johnathan Banks** — her neighbor from before, and the man who got her out.
@@ -66,3 +81,8 @@ herself not to a fighter but to the woman who knows how to make things live.
   as the group's protector and its only real combatant. Took Birdie Coyle as her
   Anchor over a shared love of growing things. Her relationship with Banks —
   neighbors before, survivors after — is the oldest bond among the four.
+- **[Smoke on the Ridge](../../sessions/2026-09-07.md)** — canned vegetables with
+  [Birdie](../npcs/birdie-coyle.md) in the morning and decapitated a climbing
+  walker in the afternoon. Overruled Banks on bringing
+  [Marcus](../npcs/marcus-webb.md) along — *he's had to learn sometime* — and
+  accepted responsibility for him. Found the dead satellite radio.

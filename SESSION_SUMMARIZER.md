@@ -5,13 +5,16 @@
 This is the session summarizer for **Dead Ridge, TN**, a **The Walking Dead Universe Roleplaying Game (Free League)**
 campaign (post-apocalyptic survival horror; Appalachian mountains, 2030; people are the real threat).
 We play remotely and capture audio with OBS Studio, then transcribe with
-Deepgram (diarization on) to get per-speaker transcripts.
+Deepgram (diarization on) to get per-speaker transcripts. When a recording
+fails, the GM's written notes stand in for the transcript — see
+**When there is no transcript** under *Input Sources*.
 
 I will provide:
 
 - Previous session summaries (if available)
 - The wiki with PC, NPC, faction, and location entries
-- Raw materials from the latest session (transcript, DM notes, player notes)
+- Raw materials from the latest session (a transcript and/or written notes, plus
+  handouts and an optional title card)
 
 Using the provided information, generate the following outputs in **Markdown**,
 formatted for MkDocs Material.
@@ -120,7 +123,42 @@ the generator exits non-zero, surface the error and continue without the image.
 Create a session summary file in `docs/sessions/` named by date
 (e.g., `2026-06-04.md`).
 
-Structure as follows:
+#### Title
+
+Give the session a short **thematic title** (see *Navigation Update* for how it
+is numbered). If a notes file opens with a `Title:` line, that line **is** the
+title — strip any in-world date from it. If the session folder holds a title
+card, the lettering on the card wins over everything else.
+
+#### Title card
+
+If the session folder holds a title card at
+`sessions-raw/<DATE>/title.{png,jpg,jpeg,webp}`, copy it into the site:
+
+```bash
+cp "sessions-raw/<DATE>/title.png" "docs/assets/sessions/<DATE>-title.png"
+```
+
+Do **not** embed it in the markdown — the `hooks/wiki_images.py` build hook
+renders any `docs/assets/sessions/<DATE>-title.png` as a banner **above** the
+page's H1 automatically. Never generate a title card when one is absent; a
+session without one simply starts at its H1.
+
+Note the `-title` suffix: it keeps the card distinct from the dramatized scene
+image at `docs/assets/sessions/<DATE>.png`, which the page *does* embed itself.
+
+#### Subtitle line
+
+Directly under the H1, put an italic one-liner: the chapter, the real-world play
+date, and — when the notes or the title card give one — the in-world date.
+
+```markdown
+*Chapter 1 · 2026-09-07 · in-world 08/15/2030*
+```
+
+Session zero uses `*Session zero · <DATE>*` instead of a chapter number.
+
+Then structure the body as follows:
 
 #### Overview
 A 2-3 sentence summary of what happened this session.
@@ -145,6 +183,10 @@ Highlight standout moments worth remembering:
 - Suggested next steps and story hooks
 
 #### Dramatized Scene (Interactive)
+
+This runs for **every** session — transcript-based or notes-only. The image it
+generates (`docs/assets/sessions/<DATE>.png`) is a *different* image from the
+title card (`<DATE>-title.png`); a session can have both.
 
 After completing the summary, **suggest exactly 3 scenes** from the session that
 could be dramatized as short prose. For each suggestion, provide:
@@ -259,12 +301,42 @@ Located in `docs/sessions/` — read for context and continuity.
 Located in `docs/wiki/` — reference for existing characters, factions, and locations.
 
 ### Latest Session Materials
-Located in `sessions-raw/[DATE]/`:
-- `transcript.md` — Full session transcript
-- `dm-notes.md` — GM's session notes and prep
-- `*-notes.md` — Individual player notes (e.g., `braedon-notes.md`)
+Located in `sessions-raw/[DATE]/`. Find the newest date folder for the latest
+session. Nothing in the folder is mandatory by name — read what is there:
 
-Find the newest date folder for the latest session.
+- `transcript.md` — the full diarized session transcript. **Optional**: it only
+  exists when the recording worked.
+- **Every other `.md` file in the folder is source material** — GM notes
+  (`Session Notes.md`, `dm-notes.md`), player notes (`*-notes.md`), and handouts
+  (`havens-handout.md`, `npc-anchor-handout.md`). Read all of them.
+- `title.{png,jpg,jpeg,webp}` — optional title card (see *Title card* above).
+- Non-text files (`session.m4a`, `session.deepgram.json`, `speaker-map.json`) are
+  transcription plumbing — ignore them.
+
+At least one text source must exist. If the folder has neither a transcript nor
+any notes, stop and say so rather than inventing a session.
+
+### When there is no transcript
+
+A failed recording is normal and the pipeline handles it: the GM's written notes
+become the **authoritative record** of what happened. Produce the same page
+structure, the same cross-linking, and the same voice as a transcript-based
+session — a reader should not be able to tell which kind they are reading.
+
+Two rules keep it honest:
+
+- **Do not invent verbatim dialogue.** Never attribute a quoted line to a player
+  or character unless the notes actually contain it. Where a transcript-based
+  summary quotes the table directly, a notes-based one narrates the beat instead.
+  Lines the notes *do* quote (read-aloud text, an NPC's dying words) may be
+  quoted as written.
+- **Do not fill gaps with invention.** Notes are compressed — resist smoothing
+  them into detail that was never established. Where the notes are deliberately
+  open (an ambiguous name, an unresolved connection), write the page ambiguous
+  too and put it under *Open Threads*.
+
+The **Dramatized Scene** is the one place where prose invention is expected and
+welcome — it is explicitly a dramatization, not a record.
 
 ### Participants
 

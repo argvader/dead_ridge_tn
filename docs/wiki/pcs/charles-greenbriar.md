@@ -54,6 +54,24 @@ things when he's at the bottom of a bottle. He feeds my delusions."* It is a
 genuine bond and a closed loop at the same time, and everyone else can see the
 second part.
 
+## The Best Searcher at the Hollow
+
+He spent the morning of the crash checking small snares for small game, and one
+large snare for Bigfoot. Then he went through a hundred and fifty yards of burning
+wreckage and came out with a semi-automatic rifle, a case of money, and
+**hospital-grade medical supplies** — more than the rest of the party found
+between them. All those years of looking for something that isn't there appear to
+have made him very good at finding things that are.
+
+He also found the **IVY-4 case**: military-grade, and shattered. Vials broken,
+samples contaminated or destroyed. A biologist, standing over the wreck of a
+sealed sample container, five years into a plague nobody explained.
+
+He got one intact document out of it. He has not shown it to the others.
+
+He is also the man who called Tolliver's people over to the medical supplies
+before anyone had agreed how the salvage was being split.
+
 ## Relationships
 
 - **Johnathan Banks** — arrived on Banks' doorstep as a stranger out of the woods
@@ -68,3 +86,8 @@ second part.
   [the Hollow](../locations/the-hollow.md) with Dale Pruitt after being driven
   out of Dale's cabin. Took Dale as his Anchor. Established the Bigfoot theory of
   the outbreak, which nobody has agreed to and nobody has contradicted.
+- **[Smoke on the Ridge](../../sessions/2026-09-07.md)** — out-searched the whole
+  party at [the crash site](../locations/the-crash-site.md). Recovered the
+  destroyed IVY-4 sample case and kept one document from it to himself.
+  Volunteered the medical supplies to [Wade Tolliver](../npcs/wade-tolliver.md)'s
+  crew.

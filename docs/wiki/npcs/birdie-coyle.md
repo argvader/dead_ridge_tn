@@ -46,3 +46,7 @@ a room.
 - **[Nine in the Hollow](../../sessions/2026-08-30.md)** — introduced as one of
   the five already living at the Hollow; taken as CJ's Anchor over a shared love
   of growing things.
+- **[Smoke on the Ridge](../../sessions/2026-09-07.md)** — spent the morning
+  canning vegetables with CJ against the coming winter, then read the smoke off
+  the ridgeline and put the crash at five to ten miles out. The ranger's estimate
+  is what the party navigated by, and it was good.
