@@ -51,6 +51,29 @@ He came out of the cockpit with a blank face and the hatchet hanging bloody at
 his side. Nobody at the Hollow had ever taken him seriously before. Somebody
 finally did.
 
+## Braveheart
+
+Then the herd came, and Marcus froze. He stood by the cockpit with the pilot's
+blood drying on his hatchet and didn't move. When CJ reached him and tried to
+talk him out of it, all he could say was *"I just killed somebody… and now
+zombies."* She picked him up and carried him over her shoulder.
+
+A few minutes later he snapped out of it all at once. He fought his way out of
+her arms, took the hatchet in both hands, charged the nearest walker, and killed
+it. Then he ran for Banks like a kid who thought he was in *Braveheart*.
+
+It didn't go perfectly. When Banks slid down the ravine, Marcus grabbed for him
+and pulled the rest of the group down too. But at the bottom he had himself
+together. He put the hatchet away and helped haul the wounded Banks up the roots
+and out.
+
+At the fire back home, CJ said he'd earned a drink and Banks agreed. He handed
+Marcus the moonshine jug, and Marcus got it down through gritted teeth. *It's a
+good burn, Marcus.*
+
+CJ is already talking about taking him into the woods to find a couple of
+walkers for practice.
+
 ## Relationships
 
 No survivor took Marcus as an Anchor. He and [Tucker Vance](tucker-vance.md) are
@@ -70,3 +93,7 @@ him, and **Banks**, who refused him and then handed him the hatchet anyway.
   crash site over Banks' objection and under CJ's sponsorship. Found a solar
   battery in the debris. Put a hatchet through a dead woman's skull because Banks
   told him it was time he learned how.
+- **[The Half We Left Behind](../../sessions/2026-09-13.md)** — froze when the
+  herd hit and had to be carried out by CJ, then broke loose and killed a walker
+  on his own. Helped pull Banks out of the ravine. Brought the radio and battery
+  home to Tucker, and got his first swig of moonshine by the fire.

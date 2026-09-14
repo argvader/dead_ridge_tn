@@ -34,14 +34,36 @@ for him: **"Johnny Bank Notes."** At some point after it, Johnathan Banks was
 offered a place with the crew that now runs the Last Stop and turned it down.
 Neither man has said out loud what that refusal cost or saved.
 
+## Team's Team
+
+When the herd came in over the crash site, Tolliver took charge of his people in
+seconds. A whistle and a snap, numbers called out, *east egress*. Firing lanes
+were covered, and two of his crew walked the hospital-grade medical case out of
+the wreck backward while he covered them. When the walkers pressed in, he lit a
+string of firecrackers, threw it into the back of the debris field to pull the
+dead toward the noise, and led his crew away east down the hillside.
+
+Banks shouted after him to cover Ash while she was down, and told him he owed him
+this one. Tolliver kept walking.
+
+> *"Sorry, pal. Team's team."*
+
+He got what he came for, didn't fire on anyone, and left the Hollow's people to
+the herd. That's consistent with everything he said at the negotiation: he takes
+care of his own first. The survivors, walking home in the dark, summed it up as
+*"Stupid Wade."*
+
 ## Relationships
 
 - **Johnathan Banks** — the older tie, and the reason the first meeting at the
-  crash site didn't open with weapons. What sort of tie it is has not been said.
+  crash site didn't open with weapons. When Banks called in a favor, Tolliver
+  said no.
 - **[Emmet Castellan](emmet-castellan.md)** — the man he answers to. Tolliver
   does the arithmetic Castellan doesn't always stay lucid enough to do.
 - **The survivors at [the Hollow](../locations/the-hollow.md)** — a first contact
-  that ended in an accommodation rather than a fight, and then in a herd.
+  that ended in an accommodation rather than a fight, and then in a herd. The
+  survivors now plan to come to his plaza for gas and count on the goodwill from
+  the medicine.
 
 ## Session History
 
@@ -51,3 +73,7 @@ Neither man has said out loud what that refusal cost or saved.
   salvage, then asked for the bulk of any medical supplies for the sick back at
   the plaza. Named Castellan, named the community's strength at fifty, and
   reminded Banks of an offer once declined.
+- **[The Half We Left Behind](../../sessions/2026-09-13.md)** — pulled his crew
+  and the medical case out of the crash site in military order when the herd hit.
+  Used firecrackers to draw the dead and slipped away east. Turned down Banks'
+  plea to cover Ash: *"Sorry, pal. Team's team."*

@@ -66,6 +66,38 @@ demonstration on the most dangerous person at [the Hollow](../locations/the-holl
 and she handled it alone and without noise. It is the closest thing to a clean win
 the group has had.
 
+## The Plan and the Boy
+
+When the herd came in over the crash site, CJ was the one with a plan. The
+ground was soaked in aviation fuel and someone had brought matches. Pull the dead
+into the fuel and burn them, and you save the ammo and kill a crowd. For someone
+whose drive is *take down as many as possible*, it was the obvious answer.
+
+Banks told her to get the kid first. [Marcus](../npcs/marcus-webb.md) was her
+responsibility; she'd insisted on it. She went, tried to talk him out of his
+shock, and got nowhere. So she picked him up and slung him over her shoulder,
+which meant she couldn't fight while the others did. The fire never got lit.
+
+At the fire back home she was the one who said Marcus had earned a swig of
+moonshine. She's already talking about taking him into the woods to find a
+couple of walkers for practice.
+
+When Banks came over looking pleased with himself and asked who wore a size
+eight, she got a pair of military boots out of it. She told him they made up
+for his little turn-and-run. She called the rest of them a bunch of losers.
+
+## Telling Ruth
+
+[Sister Ruth](../npcs/ruth-okafor.md) asked CJ about the pilot, and whether it
+might be her niece. CJ didn't soften it. The pilot was dead, *permanently* dead,
+and *"we took care of it so she didn't come back."* She pointed Ruth to JB, who
+had seen the woman's face, and to Chuck, who had the dog tags.
+
+She also mapped out the road trip: her Jeep, one tank of gas, the
+[Last Stop](../locations/the-last-stop.md) for fuel and
+[the retirement home](../locations/the-retirement-home.md) for medicine (and
+pudding cups) before heading to Virginia.
+
 ## Relationships
 
 - **Johnathan Banks** — her neighbor from before, and the man who got her out.
@@ -86,3 +118,8 @@ the group has had.
   walker in the afternoon. Overruled Banks on bringing
   [Marcus](../npcs/marcus-webb.md) along — *he's had to learn sometime* — and
   accepted responsibility for him. Found the dead satellite radio.
+- **[The Half We Left Behind](../../sessions/2026-09-13.md)** — proposed burning
+  the herd with the spilled fuel. Carried a frozen Marcus off the crash site
+  instead. Spotted the way out of the ravine. Got a pair of military boots from
+  Banks, told Ruth the truth about the pilot, and planned the route to Virginia in
+  her Jeep.

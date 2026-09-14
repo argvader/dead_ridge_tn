@@ -51,3 +51,8 @@ painful deaths, very quickly.
   inhabited, and has been for some time. Fifty strong under Castellan. The place
   the survivors decided would kill them is holding a community four times the
   size of theirs, and Johnathan Banks was invited into it once and said no.
+- **[The Half We Left Behind](../../sessions/2026-09-13.md)** — named as the first
+  stop on the survivors' drive to [Station Ivy](station-ivy.md). They plan to
+  trade for gas and provisions on the goodwill from the medicine. The plaza's own
+  underground tanks were drained years ago, so any fuel the crew has, they
+  brought in from somewhere else.

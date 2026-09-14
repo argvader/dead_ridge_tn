@@ -35,6 +35,30 @@ and people organized enough to expect an aircraft by a particular hour.
 The dying pilot's instruction was not *get help*. It was **don't radio — they're
 listening**.
 
+What came off the mountain filled in the rest. The coolers carried **walker
+blood** bound for [Station Ivy](station-ivy.md). A **control serum sample** was
+hidden inside the solar battery. The dead pilot's dog tags may belong to
+[Jasmine Okafor](../npcs/jasmine-okafor.md), Sister Ruth's niece.
+
+## What Was Left Behind
+
+- **The cooler.** The group agreed not to trust it. Ash ended up throwing it at a
+  walker in the ravine below the site, and it stayed there.
+- **The fuel.** The slope was soaked in avgas, heaviest around the fuselage and
+  tail. CJ's plan to burn the herd in it never happened.
+- **The dead.** Fifteen to twenty walkers came up the hill, some of them out of
+  the trees. A lot of them are still up there, or piled in the mud of the ravine
+  northwest of the wreck. One had clear green eyes and looked almost human.
+- **The pilots.** Both dealt with, so neither came back. Ruth has asked whether
+  they can go back.
+
+## The Ravine
+
+Northwest of the wreck, downhill, the slope breaks into a muddy ravine. A half
+walker was already waiting in the mud at the bottom. The way out is a break in
+the upper edge, climbed using old tree roots. The walkers that followed the
+survivors in piled on each other and got stuck.
+
 ## Session History
 
 - **[Smoke on the Ridge](../../sessions/2026-09-07.md)** — reached on foot by the
@@ -42,3 +66,7 @@ listening**.
   could be carried, contested and then split with
   [Wade Tolliver](../npcs/wade-tolliver.md)'s people, and abandoned when the herd
   came in.
+- **[The Half We Left Behind](../../sessions/2026-09-13.md)** — overrun at golden
+  hour. Tolliver's crew walked out east with the medical case behind a string of
+  firecrackers. The survivors fled northwest, down through the ravine, and left
+  the cooler and the fuel behind.

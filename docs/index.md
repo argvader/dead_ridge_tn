@@ -58,3 +58,4 @@ campaign goes on.
 | --- | --- | --- |
 | 0 | [Nine in the Hollow](sessions/2026-08-30.md) | 2026-08-30 |
 | 1 | [Smoke on the Ridge](sessions/2026-09-07.md) | 2026-09-07 |
+| 2 | [The Half We Left Behind](sessions/2026-09-13.md) | 2026-09-13 |

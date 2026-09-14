@@ -32,21 +32,41 @@ Someone who could use a little looking after, and won't be too proud to admit it
 
 ## "J. Oka"
 
-The dead pilot at [the crash site](../locations/the-crash-site.md) was identified
-by nothing but a scorched name patch reading **J. OKA** — the rest of it burned
-away.
+The dead pilot at [the crash site](../locations/the-crash-site.md) could only be
+identified by her burned dog tags. Chuck Greenbriar could read **O-K-A** on
+them and nothing else.
 
-That is all there is. It is not a match, it is not a claim, and nobody has put it
-to Ruth. It is four letters on a flight suit on a mountain, on a plane that came
-out of a place these mountains only know as a rumor. It could be a coincidence.
-Nobody who saw it thinks about it as one.
+Nobody had to tell Ruth. She'd heard about it by the time the survivors got back
+to the fire, and she brought it up herself while drinking weak tea with CJ and
+[Birdie](birdie-coyle.md).
+
+Her brother's daughter, [Jasmine](jasmine-okafor.md), had been training to be a
+pilot. She was nineteen when it all happened, working on a private license and
+aiming to fly commercial. She'd been out in Colorado. Ruth hasn't heard from her
+since.
+
+She asked if they could go back to the crash site. CJ told her plainly that the
+pilot was dead, and that they had taken care of it so she wouldn't come back.
+Ruth said she hoped it hadn't been Jasmine, and that if it had, she hoped it had
+been simple.
+
+Then she asked Chuck for the dog tags. She rubbed the burned metal with her thumb
+and found a **J** in front of the letters. Banks described the woman in the
+cockpit to her. *That could be Jasmine,* she said. *It sounds like Jasmine.*
+
+She also said Jasmine was never military and never wore dog tags, and that she
+was training for airliners, not cargo planes. Five years is a long time. Nobody
+argued with her either way.
 
 ## Relationships
 
 - **Johnathan Banks** — her Anchor, and the man who recruited her out of the
   retirement home. He is fully aware of what he did.
-- **The retirement home** — the people she left behind. They are, presumably,
-  still there.
+- **[Jasmine Okafor](jasmine-okafor.md)** — her niece, her brother's daughter.
+  Possibly the pilot who died on the ridge.
+- **[The retirement home](../locations/the-retirement-home.md)** — the people she
+  left behind. They are presumably still there, and the survivors are now
+  planning to raid the place for medicine.
 
 ## Session History
 
@@ -54,5 +74,8 @@ Nobody who saw it thinks about it as one.
   Johnathan Banks' Anchor. Her recruitment from the retirement home was
   established as the story behind that bond.
 - **[Smoke on the Ridge](../../sessions/2026-09-07.md)** — not present at the
-  crash, but a name patch reading *J. Oka* came off the ridge with the party.
-  Nobody has said it to her face yet.
+  crash, but the dead pilot's burned dog tags came off the ridge with the party.
+- **[The Half We Left Behind](../../sessions/2026-09-13.md)** — told the
+  survivors about her niece Jasmine, a trainee pilot last known in Colorado. Read
+  a *J* in front of the *OKA* on the dog tags and said it could be her. Asked to
+  go back to the crash site. Made breakfast with Birdie the next morning.

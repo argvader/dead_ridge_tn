@@ -66,6 +66,7 @@ nav:
   - Sessions:
       - "0. Nine in the Hollow": sessions/2026-08-30.md
       - "1. Smoke on the Ridge": sessions/2026-09-07.md
+      - "2. The Half We Left Behind": sessions/2026-09-13.md
   - Wiki:
       - Player Characters:
           - wiki/pcs/johnathan-banks.md
@@ -81,6 +82,7 @@ nav:
           - wiki/npcs/the-watchman.md
           - wiki/npcs/wade-tolliver.md
           - wiki/npcs/emmet-castellan.md
+          - wiki/npcs/jasmine-okafor.md
       - Factions:
           - wiki/factions/the-last-stop-crew.md
       - Locations:
@@ -89,3 +91,4 @@ nav:
           - wiki/locations/the-last-stop.md
           - wiki/locations/the-crash-site.md
           - wiki/locations/station-ivy.md
+          - wiki/locations/the-retirement-home.md

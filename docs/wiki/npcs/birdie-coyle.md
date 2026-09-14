@@ -50,3 +50,9 @@ a room.
   canning vegetables with CJ against the coming winter, then read the smoke off
   the ridgeline and put the crash at five to ten miles out. The ranger's estimate
   is what the party navigated by, and it was good.
+- **[The Half We Left Behind](../../sessions/2026-09-13.md)** — waited up. She
+  was the voice that called *"Jonathan? CJ?"* out of the dark as the party
+  reached the Hollow, and she bandaged Chuck's arm from the cabin's first aid
+  kit. She'd made tea that afternoon, hoping they'd make it back. Offered as a
+  trade asset for the Last Stop, as a tracker or for her dried medicinal herbs.
+  Cooked eggs and mush with Ruth the next morning.

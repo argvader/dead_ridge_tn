@@ -25,8 +25,9 @@ hunting cabin he barely used, and he has spent the five years since taking in
 stragglers against what he insists is his better judgment. He is not warm about
 it. He keeps doing it anyway.
 
-He carries no weapon. He carries **letters of introduction to three other
-havens**, which he considers the better armament.
+He started out with no weapon. He carries **letters of introduction to three
+other havens**, which he considers the better armament. Since the crash he has
+also used a rifle and a hatchet, one of them on himself.
 
 ## In Character
 
@@ -49,7 +50,8 @@ kind of man the group wants to kill and can't afford to.
 - **Gear:** sorted small-value trade goods; a set of scales to weigh them; and
   letters of introduction to three other havens. He rolled the scales *twice* —
   *"in case one of them's off, I like to check my work."*
-- **No weapon at all.**
+- **No weapon of his own at the start.** He has since carried the group's rifle
+  and a hatchet.
 
 ## Anchor
 
@@ -73,6 +75,46 @@ down.
 Neither man has explained the refusal, and Banks did not volunteer it to the rest
 of the group.
 
+## Turn and Run
+
+Banks told everyone ahead of time what he'd do if things went bad: run. When the
+herd came over the crash site, he did. He yelled that they had the supplies and
+there was no reason to stay, and booked it for the far corner of the field.
+
+Then he turned around and covered the others with the rifle. When Ash went down,
+he shouted at Tolliver's retreating crew to cover her while she got up, and told
+Tolliver he owed him this one. Tolliver didn't agree: *"Sorry, pal. Team's
+team."*
+
+He slid first when the hillside gave way, *like Chris Farley in* Black Sheep, and
+at the bottom of the ravine a half walker came up out of the mud at him. He got
+his hatchet into its head, and cut his own shoulder on the way through. In Ian's
+words: *the zombie doesn't hurt me. The ax does.* Marcus, whom he'd refused to
+risk his neck for, helped pull him out.
+
+At the fire, Banks poured moonshine on the wound, took a swig, allowed himself
+one single tear, and handed the jug to Marcus: *he's earned it.* Then he went
+around asking who wore a size eight and gave CJ a pair of military boots.
+
+He did not apologize. *"I told you I wasn't gonna risk my neck for the kid."*
+
+## The Box
+
+He sat down with [Tucker](../npcs/tucker-vance.md) to help get the salvaged radio
+running, and he was there when something slid inside the solar battery. He had
+everyone glove up first, because he's seen too many movies. When the hidden
+compartment turned up a black sample box, he set it down on the table very
+carefully and went to get Chuck.
+
+His scientific contribution was a complaint: *we're in Tennessee, so why is this
+in Celsius?*
+
+He described the dead pilot to Ruth, the woman whose last words he'd heard, so
+Ruth could decide whether it was her niece. He's also the one who put the next
+stops on the map: [the Last Stop](../locations/the-last-stop.md) for gas, and
+[the retirement home](../locations/the-retirement-home.md), the haven he pulled
+Ruth out of, for a medicine raid.
+
 ## Relationships
 
 - **Clara "CJ" James** — his neighbor from before, another wealthy household on
@@ -95,3 +137,9 @@ of the group.
   overruled. Found the cockpit, took a dying pilot's last words, and then walked
   the boy in and had him do the hatchet work on her. Recognized, and named, by
   Wade Tolliver.
+- **[The Half We Left Behind](../../sessions/2026-09-13.md)** — ran at the first
+  sign of trouble, as promised, then covered the group with the rifle. His appeal
+  to Tolliver was refused. Killed a half walker in a mud ravine and cut his own
+  shoulder doing it. Gave CJ military boots and Marcus a swig of moonshine. Found
+  the hidden sample box in the battery with Tucker, described the dead pilot to
+  Ruth, and proposed the Last Stop and retirement home stops.

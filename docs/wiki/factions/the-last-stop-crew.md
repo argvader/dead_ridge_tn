@@ -37,7 +37,12 @@ as the party was.
   supplies on that basis, and did not elaborate on what the sickness is or how
   many it has.
 - **Armed and disciplined.** Five of them came to the crash site; only three
-  showed themselves at first. Nobody fired.
+  showed themselves at first. Nobody fired at the survivors.
+- **Military-trained.** When the herd hit, they moved like a unit: whistle and
+  hand signals, numbers called out, *east egress*, covered firing lanes, and a
+  two-person carry on the medical crate under cover. They carry firecrackers to
+  draw walkers away, and they used them. Somebody there, probably Castellan,
+  trained them.
 - **They negotiate.** Given first claim to a windfall they had every numerical
   advantage to simply take, they acknowledged the claim and asked instead.
 
@@ -49,9 +54,24 @@ party gave up the hospital-grade medical supplies rather than fight over them,
 which buys goodwill and establishes that the Hollow can be negotiated with. It
 also tells fifty armed people where a smaller group's generosity begins.
 
+Then the herd arrived and the crew showed where theirs ends. They took the
+crate, threw firecrackers, and left. When Banks asked Tolliver to cover Ash, he
+said *"Sorry, pal. Team's team."* Nobody at the Hollow thinks that was
+treachery, exactly. Nobody has forgotten it either.
+
+The survivors are planning to come to the plaza anyway, for gas and supplies for
+the drive to [Station Ivy](../locations/station-ivy.md). They'll offer the
+Hollow's perishables, Birdie's herbs or tracking, and the goodwill from the
+medicine. Someone suggested leaving out of the negotiation the fact that they'd
+thought about shooting one of the crew in the leg.
+
 ## Session History
 
 - **[Smoke on the Ridge](../../sessions/2026-09-07.md)** — first contact, at
   [the crash site](../locations/the-crash-site.md). Named, counted, and parted
   from without violence, though the herd arrived before anyone had finished
   parting.
+- **[The Half We Left Behind](../../sessions/2026-09-13.md)** — pulled out of the
+  crash site in military order with the medical case, used firecrackers to draw
+  the herd, and left the Hollow's people behind. Now the first stop on the
+  survivors' route east.

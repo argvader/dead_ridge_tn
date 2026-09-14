@@ -28,6 +28,22 @@ heart.
 Someone patient enough to let him warm up in his own time — and who won't rush a
 good repair job.
 
+## The Battery
+
+Marcus brought Tucker the salvage he'd asked for: the dead satellite radio and
+the solar battery from the crash. Banks sat down to help. The battery still held
+a charge, and with scavenged wire Tucker got static out of the radio.
+
+Then something slid inside the battery case. Banks had everyone put on latex
+gloves from the first aid kit first. Tucker took a screwdriver to the back plate
+and found a hidden compartment built in underneath, holding a black box about
+the size of a VCR with a warning label on it. According to the document Chuck
+had kept, it's a control serum sample, and the battery may have been what kept
+it cold.
+
+Tucker went looking for parts and found the most dangerous thing anyone has
+brought to the Hollow.
+
 ## Relationships
 
 No survivor anchored to Tucker. He was briefly considered — Johnathan Banks
@@ -45,3 +61,7 @@ with no PC tie.
   electricity; anything else becomes parts. The crash was the first time the
   mechanic at the unreachable haven had something worth reaching for. He got a
   solar battery out of it.
+- **[The Half We Left Behind](../../sessions/2026-09-13.md)** — handed Banks the
+  moonshine jug when the party limped home. Worked on the radio and battery with
+  Banks, got static, and opened the hidden compartment holding the control serum
+  box.

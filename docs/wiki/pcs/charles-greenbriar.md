@@ -67,10 +67,55 @@ He also found the **IVY-4 case**: military-grade, and shattered. Vials broken,
 samples contaminated or destroyed. A biologist, standing over the wreck of a
 sealed sample container, five years into a plague nobody explained.
 
-He got one intact document out of it. He has not shown it to the others.
+He got one intact document out of it and kept it to himself for a day.
 
 He is also the man who called Tolliver's people over to the medical supplies
 before anyone had agreed how the salvage was being split.
+
+## The Half in the Tree
+
+He got across the crash site when Ash didn't, and on the walk home he was the
+one the mountains singled out. Half a walker (one arm, one shoulder, a spinal
+cord hanging where the rest should be) fell out of a tree onto him. It bit at his
+clothes and hair. He drove his elbow into its face until it broke. His arm was a
+mess and he was the worst hurt of the four, but he wasn't bitten. The attack roll
+was one number away from bites in the back and death within hours.
+
+Then he led everyone home in the dark by the stars, and got them there.
+
+## The Document
+
+At the fire, with his arm freshly bandaged by
+[Birdie](../npcs/birdie-coyle.md), he finally took the paper out of his jacket.
+
+- The coolers on the plane carried **walker blood**, and had to be kept at
+  **−20°C**. You can't do that without power, so wherever it was going is a place
+  with power and people who know what they're doing.
+- It was going to **[Station Ivy](../locations/station-ivy.md)**, for testing.
+- The **dog tags** were his find too: burned, with **O-K-A** legible. He read them
+  as military.
+
+When Banks and [Tucker](../npcs/tucker-vance.md) pulled a black box out of the
+solar battery and came to get him *"because he's a scientist type,"* he laid the
+document next to it and matched them up. It's a **control serum, untreated pool,
+reference sample only**. His own notes on the document went further:
+
+- Two of the test subjects had **never been exposed to walkers, and turned when
+  they died**. The subjects were ordinary people gathered from out in the world.
+- The work mentions **"improved suppression"** of the virus itself.
+- What it seems to be asking, in his words: whether *"they can make somebody turn
+  without ever laying a finger on them."*
+
+He isn't convinced they're looking for a cure. He wants the sample back on
+battery power or in a freezer, because a control sample could be priceless to
+whoever is doing this research. After that, the conversation drifted to the
+Illuminati and whether the virus had been weaponized through Bigfoot.
+
+It is the first real science anyone at the Hollow has seen in five years, and it
+landed with the one man there who has been saying all along that he's not crazy.
+
+When somebody at the fire suggested the Watchman's riddle might be about a
+wendigo, Chuck said the Watchman hasn't seen anything but the bottom of a bottle.
 
 ## Relationships
 
@@ -91,3 +136,8 @@ before anyone had agreed how the salvage was being split.
   destroyed IVY-4 sample case and kept one document from it to himself.
   Volunteered the medical supplies to [Wade Tolliver](../npcs/wade-tolliver.md)'s
   crew.
+- **[The Half We Left Behind](../../sessions/2026-09-13.md)** — told Ash to leave
+  the cooler behind. Had a half walker fall out of a tree onto him, and fought it
+  off with his elbow. Led the group home by the stars. Revealed his document
+  (walker blood, test subjects, "improved suppression") and identified the box in
+  the battery as a control serum. Handed Ruth the dog tags.

@@ -24,7 +24,16 @@ you navigate by, the thing you agree to meet at, the thing you tell a stranger t
 look for. Which means everyone in these mountains, friend or otherwise, knows
 exactly where it is.
 
+It's also the turn for home. Coming back from the crash site at night, lost
+in the dark with Chuck steering by the stars, the survivors saw a silhouette on
+the ridge ahead in the moonlight: the bus. That meant the right turn back down
+to [the Hollow](the-hollow.md). A haunted school bus full of dead children was
+the most hopeful thing they saw all night.
+
 ## Session History
 
 - **[Nine in the Hollow](../../sessions/2026-08-30.md)** — established during the
   Unsetting Questions as the region's landmark wreck, and named.
+- **[The Half We Left Behind](../../sessions/2026-09-13.md)** — the landmark that
+  told the party where to turn for home when they walked back from the crash site
+  in the dark.
